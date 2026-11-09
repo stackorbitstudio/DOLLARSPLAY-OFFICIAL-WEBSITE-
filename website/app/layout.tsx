@@ -3,13 +3,16 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DollarsPlay | Play. Complete. Earn.",
+  title: "DollarsPlay | Play More. Achieve More.",
   description:
-    "Discover games, complete tasks and explore rewards with DollarsPlay."
+    "Explore games, tasks, referrals and rewards with DollarsPlay.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
