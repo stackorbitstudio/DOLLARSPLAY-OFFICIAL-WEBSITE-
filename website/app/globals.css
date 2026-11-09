@@ -1,0 +1,287 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #080d18;
+  --panel: #101a2b;
+  --text: #f5f7fb;
+  --muted: #9ba9bd;
+  --gold: #f4c76b;
+  --line: rgba(255,255,255,.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.wrap {
+  width: min(1160px, calc(100% - 48px));
+  margin: auto;
+}
+
+.nav {
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Manrope;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 17px;
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(110deg,#f6d78d,#dba94e);
+  color: #171b24;
+  font-weight: 700;
+  padding: 14px 20px;
+  border-radius: 10px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  min-height: 590px;
+  gap: 30px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  font: 800 clamp(48px,6vw,76px)/1.06 Manrope;
+  margin: 22px 0;
+}
+
+.hero h1 span {
+  color: var(--gold);
+}
+
+.lead, .section-head p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+
+.hero-art {
+  height: 400px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  background: radial-gradient(circle, #61471d44, transparent 65%);
+}
+
+.coin {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 35% 25%,#fff1bd,#e4ad47 55%,#8d5b19);
+  color: #5d3b0d;
+  box-shadow: 0 25px 90px #e5ad4930;
+  font: 800 45px Manrope;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: #0e1726;
+  padding: 24px 10px;
+  margin-bottom: 90px;
+}
+
+.stats div {
+  text-align: center;
+  display: grid;
+  gap: 8px;
+  border-right: 1px solid var(--line);
+}
+
+.stats div:last-child {
+  border: 0;
+}
+
+.stats strong {
+  color: var(--gold);
+  font-size: 13px;
+}
+
+.stats span, .feature p, .step p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.section {
+  padding: 40px 0 90px;
+}
+
+.section-head {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 45px;
+}
+
+.section-head h2, .join h2 {
+  font: 800 clamp(30px,4vw,43px) Manrope;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 16px;
+}
+
+.feature {
+  background: linear-gradient(145deg,#142238,#0e1726);
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.feature h3, .step h3 {
+  font: 700 17px Manrope;
+}
+
+.icon-box {
+  color: var(--gold);
+  font-size: 25px;
+}
+
+.how {
+  background: #0d1625;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 25px;
+}
+
+.step {
+  border-top: 1px solid var(--gold);
+  padding-top: 22px;
+}
+
+.step > span {
+  color: var(--gold);
+  font-weight: 800;
+}
+
+.join {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.join-panel {
+  padding: 50px 25px;
+  text-align: center;
+  border: 1px solid #f4c76b40;
+  border-radius: 20px;
+  background: #111d30;
+}
+
+.join-panel p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  background: #070b13;
+  padding: 35px 0;
+  color: var(--muted);
+}
+
+@media(max-width:800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 60px 0;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .stats {
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width:480px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 46px;
+  }
+
+  .stats div {
+    border: 0;
+  }
+  }
+  
