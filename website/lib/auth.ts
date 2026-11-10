@@ -94,4 +94,4 @@ export async function loginUser(
 // User logout.
 export async function logoutUser() {
   return signOut(auth);
-    }
+}
