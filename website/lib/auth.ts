@@ -95,4 +95,3 @@ export async function loginUser(
 export async function logoutUser() {
   return signOut(auth);
     }
-  
