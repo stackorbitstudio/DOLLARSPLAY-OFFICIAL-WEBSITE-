@@ -300,4 +300,157 @@ footer p {
     grid-template-columns: 1fr;
   }
   }
-  
+
+/* DOLLARSPLAY SIGNUP PAGE */
+
+.auth-page {
+  min-height: 100vh;
+  padding: 30px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at top, #24133e 0%, transparent 45%),
+    var(--bg);
+}
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.auth-brand img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 35px;
+  background: var(--panel);
+  border: 1px solid #34304b;
+  border-radius: 20px;
+  box-shadow: 0 0 45px #a855f722;
+}
+
+.auth-card h1 {
+  font-size: 30px;
+  margin: 15px 0 10px;
+}
+
+.auth-subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-card label {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 16px 0 8px;
+}
+
+.auth-card input,
+.auth-card select {
+  width: 100%;
+  padding: 14px;
+  border-radius: 9px;
+  border: 1px solid #343b4e;
+  background: #080b14;
+  color: white;
+  font: inherit;
+  outline: none;
+}
+
+.auth-card input:focus,
+.auth-card select:focus {
+  border-color: var(--green);
+}
+
+.auth-card select option {
+  background: #111827;
+  color: white;
+}
+
+.auth-submit {
+  margin-top: 25px;
+  padding: 15px;
+  border: none;
+  border-radius: 9px;
+  background: var(--green);
+  color: #071006;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.auth-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-message {
+  padding: 13px;
+  border-radius: 9px;
+  margin: 15px 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.error-message {
+  background: #451b25;
+  color: #ffb4b4;
+}
+
+.success-message {
+  background: #12351b;
+  color: #a7ff9b;
+}
+
+.auth-footer {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.auth-footer span {
+  color: var(--green);
+}
+
+.back-home {
+  display: block;
+  text-align: center;
+  margin-top: 22px;
+  color: var(--green);
+  font-size: 13px;
+}
+
+.auth-copyright {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 25px;
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 25px 20px;
+  }
+
+  .auth-card h1 {
+    font-size: 25px;
+  }
+}
+
