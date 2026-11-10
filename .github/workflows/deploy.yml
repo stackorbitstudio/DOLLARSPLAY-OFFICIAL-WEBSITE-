@@ -43,8 +43,11 @@ jobs:
       - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          name: dollarsplay-pages
           path: website/out
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: dollarsplay-pages
         
