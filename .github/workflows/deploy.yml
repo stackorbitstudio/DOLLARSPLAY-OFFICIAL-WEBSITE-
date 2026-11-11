@@ -39,15 +39,13 @@ jobs:
           NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID }}
           NEXT_PUBLIC_FIREBASE_APP_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_APP_ID }}
         run: npm run build
-
+     
       - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          name: dollarsplay-pages
           path: website/out
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
-        with:
-          artifact_name: dollarsplay-pages
+        
         
