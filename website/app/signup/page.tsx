@@ -100,7 +100,7 @@ export default function SignupPage() {
   return (
     <main className="auth-page">
       <Link href="/" className="auth-brand">
-        <img src="/logo.png" alt="DollarsPlay" />
+        <img src="/DOLLARSPLAY-OFFICIAL-WEBSITE-/logo.png" alt="DollarsPlay" />
         <span>DOLLARSPLAY</span>
       </Link>
 
