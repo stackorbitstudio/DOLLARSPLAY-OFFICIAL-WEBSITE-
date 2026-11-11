@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import type { FormEvent } from "react";
 import Link from "next/link";
 import { countries } from "../../lib/countries";
 import {
@@ -18,7 +19,7 @@ export default function SignupPage() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  async function handleSignup(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSignup(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setError("");
     setSuccess("");
@@ -57,7 +58,8 @@ export default function SignupPage() {
         setSuccess(
           "Account created successfully! Please check your email and verify your account."
         );
-      } catch {
+      } catch (emailError) {
+        console.error("VERIFICATION EMAIL ERROR:", emailError);
         setSuccess(
           "Your account was created, but the verification email could not be sent. Please try again later."
         );
@@ -67,12 +69,15 @@ export default function SignupPage() {
       setEmail("");
       setPassword("");
     } catch (err: unknown) {
-      const code =
-        typeof err === "object" &&
-        err !== null &&
-        "code" in err
-          ? String(err.code)
-          : "";
+      console.error("DOLLARSPLAY SIGNUP ERROR:", err);
+
+      const firebaseError = err as {
+        code?: string;
+        message?: string;
+      };
+
+      const code = firebaseError.code || "unknown";
+      const message = firebaseError.message || "No message available";
 
       if (code === "auth/email-already-in-use") {
         setError("This email is already registered.");
@@ -81,15 +86,16 @@ export default function SignupPage() {
       } else if (code === "auth/weak-password") {
         setError("Please choose a stronger password.");
       } else if (
-        code === "permission-denied" ||
-        code === "firestore/permission-denied"
+        code.includes("permission-denied") ||
+        message.toLowerCase().includes("permission")
       ) {
         setError(
-          "Database permission denied. Please contact support."
+          "Firebase Database Permission Error. Please share this error code: " +
+            code
         );
       } else {
         setError(
-          "Registration failed. Please check your details and try again."
+          "Registration Error: " + code + " | " + message
         );
       }
     } finally {
@@ -100,13 +106,18 @@ export default function SignupPage() {
   return (
     <main className="auth-page">
       <Link href="/" className="auth-brand">
-        <img src="/DOLLARSPLAY-OFFICIAL-WEBSITE-/logo.png" alt="DollarsPlay" />
+        <img
+          src="/DOLLARSPLAY-OFFICIAL-WEBSITE-/logo.png"
+          alt="DollarsPlay"
+        />
         <span>DOLLARSPLAY</span>
       </Link>
 
       <section className="auth-card">
         <span className="eyebrow">JOIN DOLLARSPLAY</span>
+
         <h1>Create Your Account</h1>
+
         <p className="auth-subtitle">
           Start your journey with games, tasks and rewards.
         </p>
@@ -195,4 +206,4 @@ export default function SignupPage() {
     </main>
   );
     }
-      
+            
