@@ -48,7 +48,7 @@ export default function ProfilePage() {
           const data = profileSnap.data();
           setName(data.displayName || currentUser.displayName || "");
           setPhotoURL(data.photoURL || currentUser.photoURL || "");
-          setCountry(data.country || "");
+          setCountry(data.country?.name || "");
           setAccountStatus(data.accountStatus || "active");
         }
       } catch {
