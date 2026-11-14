@@ -32,7 +32,7 @@ export default function LoginPage() {
         return;
       }
 
-      setSuccess("Login successful! Your account is verified.");
+      setSuccess("window.location.href = "/DOLLARSPLAY-OFFICIAL-WEBSITE-/dashboard/");
     } catch (err: unknown) {
       const code =
         typeof err === "object" && err !== null && "code" in err
