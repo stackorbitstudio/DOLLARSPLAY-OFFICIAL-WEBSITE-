@@ -201,6 +201,7 @@ export default function ProfilePage() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="w-full h-14 rounded-xl bg-[#0c0716] border border-purple-700/50 px-4 text-white text-base outline-none focus:border-lime-400"
+style={{ color: "#ffffff", caretColor: "#a3e635", fontSize: "16px", backgroundColor: "#0c0716" }}
               />
             </div>
 
@@ -219,7 +220,8 @@ export default function ProfilePage() {
               <input
                 value={email}
                 readOnly
-                className="w-full h-14 rounded-xl bg-[#0c0716] border border-purple-700/50 px-4 text-gray-400 text-base"
+                className="w-full h-14 rounded-xl bg-[#0c0716] border border-purple-700/50 px-4 text-white text-base"
+style={{ color: "#ffffff", fontSize: "16px", backgroundColor: "#0c0716" }}
               />
             </div>
 
@@ -230,7 +232,8 @@ export default function ProfilePage() {
               <input
                 value={country || "Not available"}
                 readOnly
-                className="w-full h-14 rounded-xl bg-[#0c0716] border border-purple-700/50 px-4 text-gray-400 text-base"
+                className="w-full h-14 rounded-xl bg-[#0c0716] border border-purple-700/50 px-4 text-white text-base"
+style={{ color: "#ffffff", fontSize: "16px", backgroundColor: "#0c0716" }}
               />
             </div>
 
