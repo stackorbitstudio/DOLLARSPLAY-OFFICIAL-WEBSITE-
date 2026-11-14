@@ -88,7 +88,8 @@ export default function LoginPage() {
               placeholder="Enter your Gmail"
               required
               autoComplete="email"
-              className="w-full rounded-xl border border-purple-700/50 bg-[#0c0716] px-4 py-3 text-white outline-none focus:border-lime-400"
+              className="w-full h-14 rounded-xl border border-purple-500/60 bg-[#0c0716] px-4 py-3 text-white text-base font-medium placeholder:text-gray-500 caret-lime-400 outline-none focus:border-lime-400"
+style={{ color: "#ffffff", caretColor: "#a3e635", fontSize: "16px", backgroundColor: "#0c0716" }}
             />
           </div>
 
@@ -103,7 +104,8 @@ export default function LoginPage() {
               placeholder="Enter your password"
               required
               autoComplete="current-password"
-              className="w-full rounded-xl border border-purple-700/50 bg-[#0c0716] px-4 py-3 text-white outline-none focus:border-lime-400"
+              className="w-full h-14 rounded-xl border border-purple-500/60 bg-[#0c0716] px-4 py-3 text-white text-base font-medium placeholder:text-gray-500 caret-lime-400 outline-none focus:border-lime-400"
+style={{ color: "#ffffff", caretColor: "#a3e635", fontSize: "16px", backgroundColor: "#0c0716" }}
             />
           </div>
 
